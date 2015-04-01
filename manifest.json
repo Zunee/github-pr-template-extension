@@ -1,0 +1,31 @@
+{
+  "name": "Pull Request Template Helper",
+  "description": "Pull Request Template helper",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "declarativeContent",
+    "https://*.github.com/*",
+    "https://render.github.com/*",
+    "https://raw.github.com/*",
+    "https://github.com/*"
+  ],
+  "background": {
+    "page": "background.html",
+    "persistent": false
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["pageActionThing.js", "jquery-2.1.3.min.js"]
+    }
+  ],
+  "page_action": {
+    "default_icon" : "icon.png",
+    "default_title": "Paste pull request template"
+  }
+}
